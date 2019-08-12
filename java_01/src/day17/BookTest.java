@@ -1,0 +1,31 @@
+package day17;
+
+import day16.Book;
+
+public class BookTest {
+
+	public static void main(String[] args) {
+		Book b1 = new Book();
+		b1.setTitle("java");
+		try {
+			b1.setPrice(-9000);
+		} catch (PriceException e) {
+			//e.printStackTrace();
+//			System.out.println(e.getMessage());
+			System.err.println(e.getMessage()); //out과는 다르게 글자가 빨간색으로 표시됨
+		}
+		System.out.println(b1);
+		System.out.println("------------------------");
+		Book b2 = null;
+		try {
+			b2 = new Book("jsp", -99900);
+		} catch (PriceException e) {
+			System.err.println(e.getMessage()); // 찍히는 위치가 제각각임
+		}
+		System.out.println(b2);
+		
+		
+
+	}
+
+}
