@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style type="text/css">
+.ui {
+	background-color: red;
+	color: white;
+}
+</style>
+<script>
+let xdata;
+const log = console.log;
+
+$(function(){
+	$('#btn1').click(function(){
+		// $('#msg').html('ajax 통신 시작....');
+		$.ajax({
+			url:'add.jsp',
+			type:'GET',
+			dataType:'json',
+			// data: {
+			// 	p1:$('#p1').val(), // set메소드
+			// 	p2:$('#p2').val()
+				
+			// },
+			data:$('form').serializeArray(), // 폼태크안의 데이터들을 한번에 보낼때
+			success: function(data){ 
+				// $('#msg').html('success');
+				$('#result').val(data.result); //get메소드
+			},
+			error: function(error){
+				$('#msg').html('error' +error);
+			}
+
+		});
+	});
+
+	$('#btn2').click(function(){ // 비동기 방식이라 통신중에도 다른 ui틀을 그대로 사용가능하다.
+		$('#msg').addClass('ui');
+	});
+
+	$('#btn3').click(function(){
+		$('#msg').removeClass('ui');
+	});
+
+
+});
+
+</script>
+
+</head>
+<body>
+<h3>jQuery ajax add</h3>
+
+
+<form action="">
+	<input type="text" name="p1" id="p1"> +
+	<input type="text" name="p2" id="p2"> =
+	<input type="text" name="result" id="result">
+</form>
+<button id="btn1">aJax ADD 요청</button>
+<br><br>
+
+<button id="btn2"> Button 1 </button>
+<button id="btn3"> Button 1 </button>
+<div id="msg">
+	hello
+</div>
+
+</body>
+</html>

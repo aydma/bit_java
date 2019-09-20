@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+#demo {
+	width: 700px;
+	height: 400px;
+	overflow: scroll;
+}
+</style>
+<script>
+$(function(){
+	$('#btn1').click(function(){
+		getXml();
+	});
+});
+
+
+function getXml() {
+	$.ajax({ 
+		// url:'http://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=109',
+		// 이렇게 하면 로컬호스트로 서버를 잡아서 에러가 발생하기에 별도로 프록시 서버가 필요하다.
+		url:'rss.jsp', // 프록시서버역할을 할 jsp 프록시->일종의 가짜 위의 주소를 대신할 가짜
+		success: function(data){ 
+				// alert("success  "+data);
+				dispxml(data);
+			}, 
+			error: function(error){
+				alert("error  "+error.name);
+			} 
+	 });
+}
+const log = console.log;
+function dispxml(data) {
+	let tag = '<h3> 서울 경기 일기 예보</h3><br>';
+	let loc = $(data).find('location');
+	$(loc).each((i,item)=>{
+		let city = $(item).find('city').text();
+		let wf = $(item).find('wf').text();
+
+		tag += '<h4>'+city+'||'+wf+'</h4>'
+		
+	});
+
+	$('#demo').html(tag);
+}
+
+</script>
+</head>
+<body>
+<h3>jquery ajax getData(xml)</h3>
+<button id="btn1">ajax getData(xml)</button>
+<div id="demo"></div>
+</body>
+</html>
