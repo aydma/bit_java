@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>position (좌표값이용해서위치지정)</title>
+
+<style type="text/css">
+.box {
+	width: 200px;
+	height: 50px;
+	border: 5px solid black;
+	overflow: hidden; /*박스에서 넘치면 안보임*/
+	padding: 10px;
+}
+
+.box:first-letter { /*박스안의 첫번째 글자만*/
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.areaa {
+	width: 800px;
+	border: 5px dashed red;
+	margin: 0 auto;
+	position: relative;
+}
+
+.a {
+	position: relative;
+	background-color: rgba(255,0,0,.5); /*레드,그린,블루,투명도*/
+	left: 50px;
+}
+.b {
+	position: relative;
+	background-color: rgba(0,255,0,.5); /*레드,그린,블루,투명도*/
+	left: 50px;
+	z-index: 300; /* z-index은 제일 앞으로 튀어나오게 함 */ 
+}
+.c {
+	position: relative;
+	background-color: rgba(0,0,255,.5); /*레드,그린,블루,투명도*/
+	left: 50px;
+	margin-top: -200px;
+}
+
+
+</style>
+</head>
+
+<body>
+<div class="areaa">
+	<div class="box a">
+		A CU편의점, 씨유편의점 
+		CU편의점, 씨유편의점 - 리얼생초코찰떡.. 20시간 전
+		꾸덕한 생초코가 통째로! 라는 문구와 먹음직스러운 사진에 혹해서 구입해본 씨유편의점 "리얼생초코찰떡" 가격은 1,800원이다. 저렴한 가격이 아닐수 있는데.. 해당...
+		다운시프트..그 여유... 
+	</div>
+
+	<div class="box b">
+		B CU편의점, 씨유편의점 
+		CU편의점, 씨유편의점 - 리얼생초코찰떡.. 20시간 전
+		꾸덕한 생초코가 통째로! 라는 문구와 먹음직스러운 사진에 혹해서 구입해본 씨유편의점 "리얼생초코찰떡" 가격은 1,800원이다. 저렴한 가격이 아닐수 있는데.. 해당...
+		다운시프트..그 여유...
+	</div>
+
+	<div class="box c">
+		C CU편의점, 씨유편의점 
+		CU편의점, 씨유편의점 - 리얼생초코찰떡.. 20시간 전
+		꾸덕한 생초코가 통째로! 라는 문구와 먹음직스러운 사진에 혹해서 구입해본 씨유편의점 "리얼생초코찰떡" 가격은 1,800원이다. 저렴한 가격이 아닐수 있는데.. 해당...
+		다운시프트..그 여유...
+	</div>
+
+</div>
+
+<hr>
+<p>
+P CU편의점, 씨유편의점 
+CU편의점, 씨유편의점 - 리얼생초코찰떡.. 20시간 전
+꾸덕한 생초코가 통째로! 라는 문구와 먹음직스러운 사진에 혹해서 구입해본 씨유편의점 "리얼생초코찰떡" 가격은 1,800원이다. 저렴한 가격이 아닐수 있는데.. 해당...
+다운시프트..그 여유...
+</p>
+
+
+</body>
+
+</html>

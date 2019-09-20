@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test01 css</title>
+
+<style type="text/css">
+
+	body {
+		/* background-color: gray; */
+	}
+
+	h1,h2,h3,h4,h5 { 
+		color: blue;
+		font-family: sans-serif;
+
+	 }
+
+	 .r {
+		color: orange;
+	 }
+	 body > p.r {  /* body태크의 직속자식  */
+		background-color: red;
+	 }
+
+	 #hb {
+		background-color: black;
+		color: white;
+	 }
+
+	 body, h1 {
+		 /*margin: 30px;
+		 padding: 10px;*/
+	 }
+
+	 #hc {
+		 border: 2px solid red;
+		 text-align: center;
+	 }
+
+	 h1:hover{ /*:hover h1에 커서가 올라오면*/
+		 text-align: center;
+		 color: black;
+	 }
+	 
+	 a { /* 인라인속성은 text-align: center; 줘도 가운데 가지 않음  속성을   display: block;하면 블락속성으로 바뀜*/
+		 display: block;
+		 /* background-color: yellow; */
+		 text-align: center;
+		 text-decoration: none; /*링크밑줄사라짐*/
+	 }
+	 a:hover {
+		 text-decoration: underline;
+	 }
+	 img {
+		 display: inline;
+	 }
+
+
+
+</style>
+
+</head>
+
+<body>
+	<a href="/1_html">1_html 예제</a> <!-- 반절대주소 -->
+
+	<h1 class="r">css 선택 기본1</h1> <!--id는 한군데만, class는 중복가능-->
+	<h2>css 선택 기본2</h2>
+	<h3 id="hb">css 선택 기본3</h3>
+	<h4 id="hc">css 선택 기본4</h4>
+	<h5 class="r">css 선택 기본5</h5>
+
+	<div>
+		<p>CSS is a language dfdfdfdfdfdfd</p>
+		<p class="r">fdfdfff</p>
+		<p>dfdfdfdfdf</p>
+	</div>
+
+	<p>CSS is a language dfdfdfdfdfdfd</p>
+	<p class="r">fdfdfff</p>
+	<p> dfdfd<img alt="" src="./img/dog2.jpg">fdfdf</p>
+
+	
+
+</body>
+
+</html>

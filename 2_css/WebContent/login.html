@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>layout test App</title>
+
+<link rel="stylesheet" href="./css/prob1.css" >
+
+</head>
+<body>
+   <div id="">
+   
+     <header>
+       <hgroup>
+		   <h1>Page Title</h1> 
+		   <h2> Page SubTitle</h2>
+		</hgroup>
+	 </header>	
+	 
+		<nav>
+		   <ul>
+		      <li> <a href="index.html">Home</a></li>
+		      <li> <a href="#">Tutorials</a></li>
+		      <li> <a href="#">About</a></li>
+		      <li> <a href="login.html">Login</a></li>
+		   </ul>
+		</nav>
+		
+		<aside id="l">
+	 	    <h3> Top links </h3>
+		<ul>
+		      <li> <a href="img1.html" class="btn">이미지보기</a></li>
+		      <li> <a href="table.html" class="btn">데이터보기</a></li>
+		      <li> <a href="#" class="btn">Link 3</a></li>
+		      <li> <a href="#" class="btn">Link 4</a></li>
+		      <li> <a href="#" class="btn">Link 5</a></li>
+		   </ul>
+		</aside>
+		
+		<div id="output">
+			<section>
+				<h3>login form get 방식처리</h3>
+				<form action="login.jsp" method="GET">
+					<table border="1">
+						<tr>
+							<td><label for="id">ID</label></td>
+							<td><input type="text" id="id" name="id" value="" /></td> 
+							<!-- name을 uservo객체에 맞춤 -->
+						</tr>
+						<tr>
+							<td><label for="pw">PW</label></td>
+							<td><input type="password" id="pw" name="pw" value="" /></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input type="submit" value="로그인" />
+								<input type="reset" value="취소" />
+								<a href="users.html" >회원 가입</a>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</section>
+		</div>
+		
+		<aside id="r">
+	 	    <h3> Top links </h3>
+		<ul>
+		      <li> <a href="#">Link 1</a></li>
+		      <li> <a href="#">Link 2</a></li>
+		      <li> <a href="#">Link 3</a></li>
+		      <li> <a href="#">Link 4</a></li>
+		      <li> <a href="#">Link 5</a></li>
+		   </ul>
+		</aside>
+		
+		<footer>	Footer content  </footer>
+		   
+		   
+   
+   </div>
+</body>
+</html>
