@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Insert title here</title>
+<style>
+*{
+	/* background-color: #FFFFE9; */
+}
+#h3 {
+	margin-top: 0px;
+	height: 80px;
+	padding-top: 15px;
+	background-color: ;
+	color: #FFBB00;
+	font-size: 2.5em;
+	text-align: center;
+	border-bottom: 1px solid #BDBDBD;
+}
+#span1 {
+	color: #FFBB00;
+	font-size: 20pt;
+}
+#span2 {
+	font-size: 15pt;
+
+}
+
+#text {
+	border: 1px solid #BDBDBD;
+	height: 200px;
+	width: 800px;
+	padding: 8px;
+	font-size: 13pt;
+	
+}
+#div0{
+	height: 50px;
+}
+#div1 {
+	margin-left: 350px;
+	float: left;
+}
+#div2 {
+	margin-left: 100px;
+	float: left;
+}
+#div3{
+	text-align: center;
+}
+.btn {
+	width: 100px;
+	height: 40px;
+	border-radius: 20px;
+	background-color: white;
+	border: 1px solid #BDBDBD;
+	color: #BDBDBD;
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+
+</script>
+</head>
+<body>
+	<h3 id="h3">eat me!</h3> <br>
+	<form>
+	<div id="div0">
+		<div id="div1">
+			<span id="span1">가게이름</span><br>
+			<span id="span2">에 대한 솔직한 리뷰를 써주세요</span> <br><br>
+		</div>
+
+		<div id="div2">
+		<div>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons" style="font-size:50px; color:#BDBDBD">sentiment_very_satisfied</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<i class="material-icons" style="font-size:50px; color:#BDBDBD">sentiment_satisfied</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<i class="material-icons" style="font-size:50px; color:#BDBDBD">sentiment_very_dissatisfied</i>
+		</div>
+		<div>
+			&nbsp;&nbsp;<input type='radio' name='eval' value='good'/>맛있다 &nbsp;&nbsp;&nbsp;&nbsp;
+			<input type='radio' name='eval' value='normal' />괜찮다&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type='radio' name='eval' value='bad' />별로 <br>
+		</div> 
+			
+		</div> 
+	</div>
+		<br><br>
+		<div id="div3">
+			
+			<i class="material-icons" style="font-size:60px; color:#BDBDBD">person_outline</i> &nbsp;&nbsp;
+			<textarea id="text" name="text" placeholder="주문하신 메뉴는 어떠셨나요? 식당의 서비스와 분위기도 궁금해요!">  </textarea> <br><br><br>
+		
+		<input type="file" name="image" multiple="multiple" > <br><br><br>
+		
+		<input class="btn" type="reset" value="취소">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input class="btn" type="submit" value="완료">
+		</div>
+	</form>
+
+
+</body>
+</html>
