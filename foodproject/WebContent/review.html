@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<style>
+#h3 {
+	margin-top: 0px;
+	height: 90px;
+	background-color: #FFBB00;
+	color: white;
+	font-size: 2em;
+	text-align: center;
+}
+
+#text {
+	border: 1px solid #BDBDBD;
+	height: 200px;
+	width: 800px;
+	
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+
+</script>
+</head>
+<body>
+	<h3 id="h3">eat me!</h3> <br><br><br>
+
+
+	<form>
+		<div>
+			<span>가게이름</span><br>
+			<span>에 대한 솔직한 리뷰를 써주세요</span> <br>
+		</div>
+
+		<div>
+			<input type='radio' name='eval' value='good' />맛있다
+			<input type='radio' name='eval' value='normal' />괜찮다
+			<input type='radio' name='eval' value='bad' />별로
+		</div>
+
+		<span>사용자</span>
+		<textarea id="text" name="text">  </textarea> <br>
+
+		<input type="reset" value="취소">
+		<input type="submit" value="완료">
+
+	</form>
+
+
+</body>
+</html>

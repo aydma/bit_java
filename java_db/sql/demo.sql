@@ -17,7 +17,8 @@ CREATE TABLE Book (
   bookid      NUMBER(2) PRIMARY KEY,
   bookname    VARCHAR2(40),
   publisher   VARCHAR2(40),
-  price       NUMBER(8) 
+  price       NUMBER(8), 
+  img         VARCHAR2(100)
 );
 
 CREATE TABLE  Customer (
