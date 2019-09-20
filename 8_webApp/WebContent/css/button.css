@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+ul {
+		list-style: none;
+		text-align: center;
+		border-top: 1px solid red;
+		border-bottom: 1px solid red;
+		padding: 10px 0;
+		letter-spacing: 10px;
+	}
+
+	ul li {
+		display: inline;
+		text-transform: uppercase; /* 대문자로  변경*/
+		padding: 10px;
+		
+	}
+
+	ul li a {
+		text-decoration: none;
+		color: black;
+	}
+
+	ul li a:hover {
+		text-decoration: underline;
+	}
+
+	a.btn {
+		display: block;
+		text-align: center;
+		width: 100px;
+		height: 40px;
+		border: 1px solid gray;
+		border-radius: 15px;
+		line-height: 40px;
+		text-decoration: none;
+		background-color: aquamarine;
+		font-weight: bold;
+		font-size: 1.2em;
+		margin: 0 auto; /* 버튼이 가운데에 감 */
+		color: black;
+	}
+	a.btn:hover {
+		color: red;
+		text-shadow: 5px 5px 5px white;
+	}
