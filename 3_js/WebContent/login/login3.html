@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>login form 처리</title>
+</head>
+<body>
+<h3>login form</h3>
+<form action="login.jsp" method="GET">
+   <table border="1">
+		<tr>
+			<td><label for="id">ID</label></td>
+			<td><input type="text" id="id" name="id" value="" required="required"/></td> <!--required="required" 꼭입력하라고 노란느낌펴창이뜸-->
+			<!-- name을 uservo객체에 맞춤 -->
+		</tr>
+		<tr>
+			<td><label for="pw">PW</label></td>
+			<td><input type="text" id="pw" name="pw" value="" required="required"
+				pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{5,}"/></td>
+				<!-- .을 안붙이면 특수문자에 적용됨  .을 붙여야 모든문자허용{5,} 최소 5글자이상-->
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="로그인" />
+				<input type="reset" value="취소" />
+				<a href="users.html" >회원 가입</a>
+			</td>
+		</tr>
+   </table>
+</form>
+<hr>
+(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]) <br>
+(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9])
+
+<!--
+/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])/.test('') 
+
+-->
+
+</body>
+</html>

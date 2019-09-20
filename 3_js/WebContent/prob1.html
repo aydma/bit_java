@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>prob1</title>
+<style type="text/css">
+	input {
+		width: 50px;
+		height: 50px;
+	}
+	#l {
+		float: left;
+	}
+	#img1{
+		float: left;
+	}
+	#r {
+		float: left;
+	}
+</style>
+<script>
+	let log = console.log;
+	let src;
+	let count=0;
+	let data = [
+		"./img/dog.jpg",
+		"./img/dog2.jpg",
+		"./img/dog3.jpg",
+		"./img/dog4.jpg"	
+	]
+	let s1 = JSON.stringify(data);
+	let obj1 = JSON.parse(s1);
+
+	window.onload = function(){
+		let img1 = document.querySelector("#img1");
+		img1.src = "./img/dog.jpg";
+		img1.width = 300;
+		img1.height = 300;
+	};
+	function left(){
+		if(count>0){
+			count--;
+			document.querySelector('#img1').src =data[count];
+			
+		} else {
+			count = data.length-1;	
+			document.querySelector('#img1').src =data[count];
+		}
+	}
+
+	function right(){
+		if(count<data.length-1){
+			count++;
+			document.querySelector('#img1').src =data[count];
+			
+		} else {
+			count = 0;	
+			document.querySelector('#img1').src =data[count];
+		}
+
+	}
+</script>
+
+</head>
+
+<body>
+ 
+	<input id="l" type="image" src="./img/left.jpg" onclick="left()" >
+	<img id="img1" src="" alt="" >
+	<input id="r" type="image" src="./img/right.jpg" onclick="right()"  >
+</body>
+
+</html>

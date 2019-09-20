@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>javasctript form</title>
+<script>
+	function add() {
+		let x = document.getElementById("x").value;
+		let y = document.getElementById("y").value;
+		let sum = parseInt(x) + parseInt(y); // 정수로형변환 parseInt()
+		document.getElementById('sum').value = sum;
+
+		var flag = confirm('서버로 제출할까요?');
+		return flag;
+	}
+</script>
+</head>
+
+<body>
+<h3>Add Form javasctript</h3>
+<form action="process.jsp" method="GET">
+	<input type="text" id="x" name="x"> +
+	<input type="text" id="y" name="y"> =
+	<input type="text" id="sum" name="sum">
+	<br><br>
+	<input type="button" value="더하기 button" onclick="add()">
+	<input type="submit" value="더하기 submit" onclick="return add()"> <!-- 유효성체크할때 return안해주면 무조건 submit되어버림 -->
+	<input type="submit" >
+	<input type="reset" >
+
+
+</form>
+
+
+</body>
+
+</html>

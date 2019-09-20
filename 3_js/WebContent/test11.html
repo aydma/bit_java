@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>img</title>
+<script>
+const log = console.log;
+
+window.onload=function(){
+	let img1 = document.querySelector('#img1');
+	img1.src = './img/dog.jpg';
+	img1.width=200;
+	img1.height=200;
+
+	//btn1 이벤트 처리 핸들링
+	let btn1 = document.querySelector('#btn1');
+	btn1.onclick = function() {
+		alert('btn1 clicked ~~~~');
+	}
+
+	// link tag 이벤트 처리
+	let btn2 = document.querySelector('#btn2');
+	btn2.onclick = function() {
+		return confirm("네이버로 갈까요 ?")
+	}
+
+};
+
+function change(){
+	let src = document.querySelector('#img1').src;
+	log(src);
+	let name = src.substring(src.lastIndexOf('/'));
+	if(name == '/dog.jpg'){
+		document.querySelector('#img1').src = "./img/dog2.jpg"
+	} else {
+		document.querySelector('#img1').src = "./img/dog.jpg"
+		
+	} 
+}
+</script>
+</head>
+
+<body>
+	<h3>img처리</h3>
+	<button onclick="change()">change image</button> <br><br>
+	<img id="img1" alt="" src="" >
+
+	<button id="btn1">버튼 1</button>
+	<a id="btn2" href="http://www.naver.com">버튼2</a>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Chilanka&display=swap');
+
+@media screen and (max-width:1000px) { /* 반응형 ui 넓을때(데스크탑) 바탕회면 색지정 */
+	body {
+		background-color: #e7ecdf;
+	}
+}
+@media screen and (max-width:600px) {  /* 반응형 ui 좁을때(모바일) 바탕회면 색지정 */
+	body {
+		background-color: #ffffcc;
+	}
+}
+
+
+header hgroup h1{
+	text-align: center;
+	
+}
+header hgroup h2{
+	position: absolute;
+	right: 0px;
+	top:-40px;
+	
+}
+
+header{
+	width: 100%;
+	height: 4em;
+	/* border: 1px solid blue; */
+	position: relative;
+	/* background-color: gray; */
+} 
+
+  h1,h2,h3,h4,h5,h6 {
+	font-family: 'Chilanka', cursive;
+  }
+
+  nav {
+	  position: relative;
+	  width: 100%;
+	  height: 3em; /* 글꼴크기의 3배*/
+	  background-color: black;
+	  line-height : 3em; /*수직 가운데정렬 !주의! height와 같은값줘야함 */
+
+  }
+  nav ul li {
+	  display: inline;
+	  padding: 10px;
+  }
+  nav ul {
+	  list-style: none;
+	  text-align: center;
+  }
+  nav ul li a{
+	  text-decoration: none;
+	  color: white;
+  }
+  ul {
+	  list-style: none;
+  }
+  a {
+	  text-decoration: none;
+  }
+  a:hover {
+	  text-decoration: underline;
+  }
+  
+  section {
+	width: 60%;
+	max-width: 500px;
+	/* background-color: yellow; */
+	float: left;
+	position: relative;
+  }
+  aside {
+	position: relative;
+  }
+
+  #l {
+	width: 20%;
+	float: left;
+  }
+  #r {
+	width: 20%;
+	float: right;
+  }
+  footer {
+	  clear: both;
+	  width: 100%;
+	  height: 3em; /* 글꼴크기의 3배*/
+	  line-height : 3em; /*수직 가운데정렬 !주의! height와 같은값줘야함 */
+	  background-color: black;
+	  color: white;
+	  text-align: center;
+  }
+  a.btn {
+		display: block;
+		text-align: center;
+		width: 100px;
+		height: 40px;
+		border: 1px solid gray;
+		border-radius: 15px;
+		line-height: 40px;
+		text-decoration: none;
+		background-color: burlywood;
+		font-weight: bold;
+		font-size: 1.2em;
+		margin: 0 auto; /* 버튼이 가운데에 감 */
+		color: black;
+	}
+	a.btn:hover {
+		color: red;
+		text-shadow: 5px 5px 5px white;
+	}
+	img {
+		width: 300px;
+		height: 300px;
+	}
+
+	.menubar ul ul {
+		background: rgb(109,109,109);
+		display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */	
+		position: absolute;
+		left: 0;
+		width: 100%;
+		
+}
+	
+	.menubar li:hover ul {
+		display: block;   /* 마우스 커서 올리면 서브메뉴 보이게 하기 */
+	}
+
+	

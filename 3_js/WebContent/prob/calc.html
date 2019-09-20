@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>계산기</title>
+<style type="text/css">
+	table, tr, td {
+		border: 2px solid gray;
+		margin: 0 auto;
+		border-collapse: collapse;
+	}
+	input.btn {
+		width: 50px;
+		height: 40px;
+		font-size: 15pt;
+		font-weight: bold;
+		margin: 2px;
+	}
+	input.clr, .equal {
+		width: 110px;
+		height: 40px;
+		font-size: 15pt;
+		margin: 2px;
+	}
+	#display {
+		width: 280px;
+		height: 40px;
+		margin: 2px;
+		border: 2px solid green;
+		font-size: 16pt;
+		text-align: right;
+	}
+</style>
+
+</head>
+
+<body>
+<h3 align="center">계산기</h3>
+<table>
+	<tbody>
+		<tr>
+			<td colspan="5">
+				<input type="text" id="display" name="display" value="0">
+			</td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" class="btn"></td>
+			<td><input type="button" value="8" class="btn"></td>
+			<!-- <td><input type="button" value="9" class="btn" onclick="add(9)"></td> -->
+			<td><input type="button" value="9" class="btn"></td>
+			<td colspan="2"><input type="button" value="C" class="clr" onclick="c()"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" class="btn"></td>
+			<td><input type="button" value="5" class="btn"></td>
+			<td><input type="button" value="6" class="btn"></td>
+			<td><input type="button" value="/" class="btn"></td>
+			<td><input type="button" value="%" class="btn"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="1" class="btn"></td>
+			<td><input type="button" value="2" class="btn"></td>
+			<td><input type="button" value="3" class="btn"></td>
+			<td><input type="button" value="*" class="btn"></td>
+			<td><input type="button" value="+" class="btn"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="0" class="btn"></td>
+			<td><input type="button" value="." class="btn"></td>
+			<td colspan="2"><input type="button" value="=" class="equal" onclick="e()"></td>
+			<td><input type="button" value="-" class="btn"></td>
+		</tr>
+
+	</tbody>
+</table>
+
+<script>
+const log = console.log;
+
+let disp = document.getElementById('display');
+let expression =""; // 계산식이 들어갈 변수
+
+let btn = document.getElementsByClassName('btn');
+for(let i=0; i<btn.length; i++) {
+	btn[i].setAttribute('onclick',"add('"+btn[i].value+"')"); // ''가 문자를 들어가게해줌
+
+}
+
+function c() {
+	expression = "";
+	disp.value = 0;
+}
+
+function add(data) {
+	//alert(data);
+	expression += data;
+	disp.value = expression;
+	//log(data);
+}
+function e() {
+	disp.value = eval(expression);
+	expression = "";
+}
+
+
+
+</script>
+
+</body>
+
+</html>

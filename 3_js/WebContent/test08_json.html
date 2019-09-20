@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>json</title>
+<link rel="stylesheet" href="./css/table.css">
+<style type="text/css">
+div {
+	width: 500px;
+	height: 300px;
+	border: 2px solid blue;
+}
+</style>
+
+<script>
+const log = console.log;
+
+let data1 = {name:"홍길동",age:27};  // 자바스크립트객체
+let data2 = {"name":"홍길동","age":"27"}; // 제이슨은 키값무조건 ""애워싸줌 
+
+
+/* "" 로 애워싸는 이유 어딘가에서 넘어오는 데이터들을 json으로 사용하면 편리하기때문
+let sample = '{name:"홍길동",age:27}';
+JSON.parse(sample) // 키값에 더블코테이션하지 않아서 에러남
+*/
+
+let s1 = JSON.stringify(data1) // data1은 object이라서 data1.name으로 정보빼올수있지만 s1은 스트링이라서 s1.name은  파싱하지않으면 안됨
+let s2 = JSON.stringify(data2)
+
+log(typeof(s1)," ",s1) 
+// s1.name안됨
+let obj1 = JSON.parse(s1); // json이 스트링타입인 s1을 파싱해서 object타입으로 바꿔줌
+// s1.name 됨
+let obj2 = JSON.parse(s2);
+
+/*
+let student = {
+	name:"홍길동",
+	ko:99,
+	eng:100,
+	sum:function(){
+		return this.ko+this.eng; // this는 메모리에서의 나
+	},
+	avg:function(){
+		return this.sum()/2;
+	}
+}
+
+let studentStr = JSON.stringify(student); // JSON객체에선 함수는 무시하고 데이터만 처리함 제이슨 객체는 데이터호환을 목적으로하기때문
+*/
+let student = {
+	name:"홍길동",
+	ko:99,
+	eng:100,
+	flag:true, // 제이슨에 들어감
+	u:null // 제이슨이 null(데이터없는애)도 인식함 
+}
+
+let studentStr = JSON.stringify(student); 
+let sample = '{"name":"홍길동","age":27}';
+let sampleobj = JSON.parse(sample) // 키값에 더블코테이션하지 않으면 에러남
+
+
+let data3 = [
+	{"name":"홍길동","age":"27"},
+	{"name":"서묘음","age":"26"},
+	{"name":"강아지","age":"7"},
+	{"name":"고양이","age":"5"}
+]
+let s3 = JSON.stringify(data3)
+alert(s3);
+let obj3 = JSON.parse(s3);
+
+//obj3 을 table 구조로 만들어서 #result에 출력
+function getData() {
+	/* let disp = document.getElementById('result');
+	   obj3.forEach( obj3 => { (disp.innerHTML += 
+	 	"<table><tr><td>"+obj3.name+"</td><td>"+obj3.age+"</td></tr> </table>")
+	 } );*/
+	let disp = document.getElementById('result');
+	let tag = "<table class='tablea'>";
+	tag += "<tr><th>이  름</th><th>나   이</th></tr>";
+	for(let data of obj3) {
+		tag += "<tr><td>"
+		tag += data.name+"</td><td>"+data.age
+		tag += "</td></tr>"
+	}
+
+	tag += "</table>"	
+	disp.innerHTML = tag;
+
+
+}
+
+</script>
+
+</head>
+
+<body>
+<h3>json</h3>
+
+<button onclick="getData()">Data 가져오기</button> <br><br>
+<div id="result" ></div>
+</body>
+
+</html>

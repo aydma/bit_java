@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>login form 처리</title>
+</head>
+<body>
+<h3>login form</h3>
+<form action="login.jsp" method="GET" onsubmit="return check()"> <!--return값이 false면 안넘어감-->
+   <table border="1">
+		<tr>
+			<td><label for="id">ID</label></td>
+			<td><input type="text" id="id" name="id" value="" /></td> 
+			<!-- name을 uservo객체에 맞춤 -->
+		</tr>
+		<tr>
+			<td><label for="pw">PW</label></td>
+			<td><input type="password" id="pw" name="pw" value="" /></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="로그인" />
+				<input type="reset" value="취소" />
+				<a href="users.html" >회원 가입</a>
+			</td>
+		</tr>
+   </table>
+</form>
+</body>
+
+<script>
+function check(){
+	let id = document.querySelector('#id');
+	let pw = document.querySelector('#pw');
+
+	if(id.value.trim().length < 5 ){
+		alert("ID는 5글자 이상 입력하세요");
+		id.focus();
+		return false;
+	}
+	return true;
+
+}	
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>javascript array</title>
+<style type="text/css">
+div {
+	width: 500px;
+	height: 300px;
+	border: 2px solid blue;
+}
+</style>
+<script>  // 돔트리 작업을 끝낸후에 함수실행
+// window.onload = function() {} 
+// 함수는 웹브라우저의 모든 구성요소에 대한 로드가 끝났을때 브라우저에 의해서 호출되는 함수이다.
+window.onload = function() {
+	let disp = document.getElementById('result'); // 돔트리가 완성되기전에 이 작업을 해서 script위치를 밑으로 옮기거나 함수안에 넣어준다.
+	// disp.innerText="<h3>~~~</h3>"  // input아니라서 innerHTML,innerText등으로 씀
+	// disp.innerHTML="<h3>~~~</h3>"
+	// innerHTML는 <h3>인식함 //innerText는 <h3>도 텍스트로 넣음
+	
+	num.filter(i => i>33).forEach(data => {disp.innerHTML+="<h5>"+data+"</h5>"})
+	}
+
+const log = console.log;
+let x = [3,6,9,77,88];
+let y = [22,33,44,55,77]; // 위치 인덱스 기반이기 때문에 같은 데이터가 와도 상관없음.
+
+let num = x.concat(y);
+log(num)
+num.sort()
+log(num)
+num.sort((a,b)=>{return a-b}) // 어떻게 비교할지 메소드써주기 람다
+log(num)
+num.filter(i => i>33).forEach(data => log(data))
+log(num)
+
+
+
+
+
+</script>
+</head>
+
+<body>
+<h3>javascript array</h3>
+
+<div id="result">
+
+</div>
+
+
+</body>
+
+</html>

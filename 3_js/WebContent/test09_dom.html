@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dom</title>
+<script>
+let h1;
+const log = console.log;
+// window.onload = function() {} 
+// 함수는 웹브라우저의 모든 구성요소에 대한 로드가 끝났을때 브라우저에 의해서 호출되는 함수이다.
+window.onload = function() {
+	// document.getElementById('id1').style.backgroundColor='red'
+	// document.querySelector('#id1').style.backgroundColor='red'
+	// document.querySelector('.h3').style.backgroundColor='red' // 맨처음만난 1개만 선택이 
+	// document.querySelectorAll('.h3').style.backgroundColor='red' // 배열이라 직접사용못함 foreach써야함
+	// document.querySelectorAll('.h3')[0].style.backgroundColor='red' // 이렇게 접근할수있음
+	// document.querySelectorAll('.h3')[1].style.backgroundColor='red' 
+
+	// document.querySelector('h1').style.color="blue" // "",''둘다됨
+
+	h1 = document.querySelectorAll('h1');
+
+/*	for(let i=0; i<h1.length; i++) {
+		h1[i].style.color="blue";
+		h1[i].style.backgroundColor="gray";
+		h1[i].innerHTML="~~~~~";
+	}
+*/
+	for(let data of h1){
+		data.style.color="blue";
+		data.style.backgroundColor="gray";
+		data.innerHTML="~~~~~";
+	}
+	
+} 
+
+
+
+</script>
+</head>
+<body>
+<h1 id="id1">javascript dom</h1>
+
+
+
+<h1>process-h1</h1>
+<h2>process-h2</h2>
+<h3 class="h3">process-h3</h3>
+<h3>process-h3 ...</h3>
+<h4 class="h3">process-h4</h4>
+
+
+
+
+</body>
+</html>
