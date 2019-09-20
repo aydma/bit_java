@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+const log = console.log;
+$(()=>{  //$('img:eq(0)') -> 위치인덱스 0번째를 찾아옴
+//$('img:eq(0)').attr('src') // attr에 1개만 들어가면 get역할
+//$('img:eq(0)').attr('width',200) // // attr에 2개 들어가면 set역할 width를 200으로 바꿈
+
+
+	// alert('~~~');
+	$('img').each(function(index,item){
+		//log(index);
+		//log(item);
+		//log('./img/dog'+index+'.jpg');
+		
+		$(this).attr('src','./img/dog'+index+'.jpg');
+		$(this).attr('width','100');
+		$(this).attr('height','100');
+		
+	});
+	// $('img').each((index,item)=>{
+	// 	//log(index);
+	// 	//log(item);
+	// 	//log('./img/dog'+index+'.jpg');
+		
+	// 	$(item).attr('src','./img/dog'+index+'.jpg');
+	// 	$(item).attr('width','100');
+	// 	$(item).attr('height','100');
+		
+	// });
+
+});
+</script>
+</head>
+<body>
+<h3>jquery img</h3>
+
+<img />
+<img />
+<img />
+<img />
+<img />
+
+</body>
+</html>

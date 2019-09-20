@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<title></title>
+<script>
+//window.onload = function() {alert('~~~~');};
+//$(document).ready(function () { alert('~~~~') });
+// $ = jQuery
+// $(function(){	});
+// $(()=>{	});
+
+$(function(){  
+	$('#h2_2').click(function(){ //함수안에서 함수호출 콜백함수 자바스크립트특징 고차함수
+		$(this).hide(); // this는 클릭한 h2
+	});
+}); 
+
+
+
+
+
+</script>
+</head>
+<body>
+<h1>jquery test</h1>
+<h2>클릭하면 사라집니다. 1</h2>
+<h2 id="h2_2">클릭하면 사라집니다. 2</h2>
+<h2>클릭하면 사라집니다. 3</h2>
+<h2>클릭하면 사라집니다. 4</h2>
+<h2>클릭하면 사라집니다. 5</h2>
+
+</body>
+</html>

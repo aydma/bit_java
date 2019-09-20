@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+// $ = jQuery
+// jQuery(()=>{
+$(()=>{
+	$('#show').click(function(){
+		$('h2').show();
+	});
+
+	/*
+	$('#hide').click(function(){
+		$('h2').hide();
+	});
+	*/
+	$('#hide').bind('click', function(){ $('h2').hide(); });  //bind, unbind로 제거가능
+
+	$('#msg').on({
+		focus:function(){
+			$(this).css('background-color','yellow'); // css와 거의 비슷함 자바스크립트는 조금 다름
+		},
+		blur:function(){
+			$(this).css('background-color','blue');
+		}
+	});
+});
+</script>
+</head>
+<body>
+<!-- 웹프로젝트 생성후 => tern project 로 컨버팅한다. (broswer, ckeditor, jQuery) -->
+<h2>jquery 이벤트 등록 방법</h2>
+
+<button id="show"> show </button>
+<button id="hide"> hide </button>
+<br><br>
+Msg : <input type="text" name="msg" id="msg">
+
+
+</body>
+</html>

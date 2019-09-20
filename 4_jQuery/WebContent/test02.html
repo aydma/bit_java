@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>temp</title>
+<style>
+	.error {
+		color: red;  
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+let log = console.log;
+$(function(){
+	$('input[name="id"]').keyup(function() {	
+		let id = $(this).val(); // 자바스크립트에서는 value인데 제이쿼리는 val
+		if(id.length < 5){
+			$('#sid').text('id는 5글자 이상 입력해주세요.');
+		}else {
+			$('#sid').text('사용 가능');
+		}
+	});
+
+	// $('input[name="name"]').blur(function() {	//blur는 커서가 내려와야 처리됨
+	$('input[name="name"]').focus(function() {	//focus는 커서가 올라가면 바로나옴
+		let name = $(this).val();
+		if(name.length < 5){
+			$('#sname').text('name은 5글자 이상 입력해주세요.');
+		}else {
+			$('#sname').text('사용 가능');
+		}
+	});
+
+	$('input[type="button"]').click(function() {	
+		$('#f1').attr('method','GET');
+		$('#f1').attr('action','process.jsp');
+		$('#f1').submit();
+	});
+
+
+});
+</script>
+</head>
+<body>
+<h3>Register</h3>
+
+<form id="f1">
+	ID : <input type="text" name="id" id="id"> <span id="sid" class="error"></span><br>
+	NAME : <input type="text" name="name" id="name"><span id="sname" class="error"></span><br>
+	
+	<input type="button" value="Register">
+	<input type="reset">
+</form>
+
+
+</body>
+</html>

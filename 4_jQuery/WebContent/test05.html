@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+$(function(){
+	// alert('~~~');
+	$('<h1></h1>').text('hello jQuery')
+					.css({ // {}는 자바스크립트 객체
+						color: 'blue',
+						backgroundColor: 'red'
+					}) 
+					.appendTo('body'); // h1만들어서 글쓰고 body태그에 붙임
+					
+	$('<h2></h2>').text('hello jQuery').appendTo('body'); 
+	$('<h3></h3>').text('hello jQuery').appendTo('body');
+	
+	$('<ul></ul>').appendTo('body');
+	$('<li><a href="./test01.html"> Link1 </a></li>').appendTo('ul')
+	$('<li><a href="./test01.html"> Link2 </a></li>').appendTo('ul')
+	$('<li><a href="./test01.html"> Link3 </a></li>').appendTo('ul')
+
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

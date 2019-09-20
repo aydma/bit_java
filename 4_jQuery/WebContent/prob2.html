@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(function(){
+	
+	$('<div>').css({
+			border: '1px solid black', 
+			width : '800px',
+			height: '350px'
+		}).appendTo('body');
+		$('<h1></h1>').text('질문1: 대한민국의 수도는 어디입니까?').appendTo('div');
+		$('<span id="s1"></span><br><br>').text('[정답 보기]').appendTo('div');
+		$('<span id="s11"></span>').css({display: 'none'})
+		.text('대한민국의 수도는 서울입니다').appendTo('div');
+		$('<h1></h1>').text('질문2: 대한민국의 국보1호는 어디입니까?').appendTo('div');
+		$('<span id="s2"></span><br><br>').text('[정답 보기]').appendTo('div');
+		$('<span id="s22"></span>').css({ display: 'none'})
+		.text('대한민국의 국보1호는 숭례문입니다').appendTo('div');
+	$('</div>').appendTo('body');
+
+	$('#s1').click(function(){
+		$('#s11').show();
+	});
+
+	$('#s2').click(function(){
+		$('#s22').show();
+	});
+
+
+	
+
+
+});
+</script>
+<style>
+
+</style>
+</head>
+<body>
+	
+</body>
+</html>
