@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>map</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+
+<style>
+	#map {
+		width: 100%;
+		height: 400px;
+		background-color: gray;
+	}
+
+</style>
+</head>
+<body>
+<h3>map</h3>
+<div id="map"></div>
+
+<script>
+navigator.geolocation.getCurrentPosition(initmap);
+
+function initmap(position) {
+	let p = { // p는 위치정보
+		lat:position.coords.latitude, // 위도
+		lng:position.coords.longitude // 경도
+	};
+
+	let map = new google.maps.Map(document.getElementById('map'),
+									{zoom:14,center:p});
+
+	let marker = new google.maps.Marker({
+		position: p,
+		map:map,
+		label:'내위치',
+		href:"http://www.naver.com"
+	});
+//	Latitude: 37.4923615
+//	Longitude: 127.02928809999999
+	let marker2 = new google.maps.Marker({
+		position: {
+			lat:37.4923615,
+			lng:127.049288
+		},
+		map:map,
+		label:'내위치',
+		href:"http://www.daum.net"
+	});
+
+
+}
+
+</script>
+
+</body>
+</html>

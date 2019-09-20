@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Hi+Melody|Monoton&display=swap');
+h2 {
+	text-align: center;
+	font-family: 'Hi Melody', cursive;
+}
+#btn1 {
+	
+}
+#shopping_cart {
+		width: 750px;
+		height: 100px;
+		padding: 10px;
+		border: 1px dotted red;
+		margin: 0 auto;
+		
+	}
+#div1 {
+	display: inline;
+	margin-left: 400px;
+	
+}
+</style>
+
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<script>
+let data = [{
+        name: '1-3개월',
+        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+    }, {
+        name: '6개월미만',
+        data: [24916, 34064, 49742, 99851, 132490, 130282, 168121, 90434]
+    }, {
+        name: '1년미만',
+        data: [11744, 17722, 16005, 19771, 20185, 124377, 132147, 139387]
+    }, {
+        name: '6년미만',
+        data: [2589, 8569, 7988, 2169, 5112, 7452, 8400, 10227]
+    }, {
+        name: '6년이상',
+        data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 8111]
+    }];
+$(function(){
+	$('#btn1').click(function(){
+		chart(data);
+
+	});
+});
+
+function chart(){
+    Highcharts.chart('container', {
+        title: {
+            text: '유기견 분양 , 2012-2019'
+        },
+
+        subtitle: {
+            text: '유기견 보호협회'
+        },
+
+        yAxis: {
+            title: {
+                text: 'Number of Employees'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        plotOptions: {
+            series: {
+                label: {
+                    connectorAllowed: false
+                },
+                pointStart: 2012
+            }
+        },
+        series: data,
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
+    });
+}
+
+	function allowDrop(e){
+		e.preventDefault();
+	}
+	function handleDragStart(e) {
+		e.dataTransfer.effectAllowed = 'move';
+		e.dataTransfer.setData("Text",e.target.id);
+	}
+	function handleDrop(e){
+		e.preventDefault();
+		var src = e.dataTransfer.getData("Text");
+		e.target.appendChild(document.getElementById(src));
+	}
+</script>
+</head>
+<body>
+<h2><i class='fas fa-cat' style='font-size:48px;color:red'></i>묘음이의 홈페이지<i class='fas fa-paw' style='font-size:24px;color:pink'></i></h2>
+
+<div id="shopping_cart" ondrop="handleDrop(event)"" ondragover="allowDrop(event)"></div>
+<br>
+<div id="div1">
+	<img id="img1" src="./img/0.jpg" draggable="true"
+	ondragstart="handleDragStart(event)" width="150" height="100">
+	<img id="img2" src="./img/1.jpg" draggable="true"
+	ondragstart="handleDragStart(event)" width="150" height="100">
+	<img id="img3" src="./img/2.jpg" draggable="true"
+	ondragstart="handleDragStart(event)" width="150" height="100">
+	<img id="img4" src="./img/3.jpg" draggable="true"
+	ondragstart="handleDragStart(event)" width="150" height="100">
+	<img id="img5" src="./img/4.jpg" draggable="true"
+	ondragstart="handleDragStart(event)" width="150" height="100">
+</div> <br>
+
+<button id="btn1" class="btn" style='font-size:16px'>유기견분양차트보기<i class='fas fa-dove'></i></button>
+<div id="container"></div>
+</body>
+</html>
